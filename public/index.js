@@ -89,10 +89,10 @@ function updateStats(tickets) {
 
 // ----------------- Mark Ticket Completed -----------------
 async function markCompleted(ticketId, btn) {
-  btn.textContent = "Submitting... ⏳";
+  const originalText = btn.textContent; // save original label
   btn.disabled = true;
+  btn.textContent = "Submitting... ⏳";
   btn.style.cursor = "not-allowed";
-  btn.style.background = "#adb5bd"; // gray while processing
 
   try {
     const res = await fetch(`/api/tickets/${ticketId}/complete`, {
@@ -107,17 +107,17 @@ async function markCompleted(ticketId, btn) {
       setTimeout(() => loadTickets(), 1000);
     } else {
       alert("Error: " + (data.error || "Unknown error"));
-      btn.textContent = "Retry";
       btn.disabled = false;
+      btn.textContent = originalText;   // restore original text
       btn.style.cursor = "pointer";
-      btn.style.background = "#fa5252"; // red
+      btn.style.background = "";
     }
   } catch (err) {
     alert("Error updating ticket status");
-    btn.textContent = "Retry";
     btn.disabled = false;
+    btn.textContent = originalText;     // restore original text
     btn.style.cursor = "pointer";
-    btn.style.background = "#fa5252";
+    btn.style.background = "";
   }
 }
 
