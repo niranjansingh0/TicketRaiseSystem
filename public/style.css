@@ -263,7 +263,7 @@
             }
 
             .stats {
-                flex-direction: column;
+                /* flex-direction: column; */
                 align-items: center;
             }
 
@@ -273,7 +273,7 @@
         }
 
 
-        .complete-btn {
+.complete-btn {
     background: #51cf66;
     color: white;
     border: none;
@@ -292,4 +292,107 @@
     font-size: 0.7rem;       /* smaller text */
     color: #999;             /* lighter color */
     font-style: italic;      /* optional */
+}
+
+
+/* Tablet & small devices */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .form-section,
+    .tickets-section {
+        padding: 20px;
+    }
+
+    .stats {
+        /* flex-direction: column; */
+        align-items: center;
+    }
+
+    .stat-card {
+        min-width: 120px;
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .ticket {
+        padding: 15px;
+    }
+
+    .ticket-title {
+        font-size: 1rem;
+    }
+}
+
+/* Very small devices (mobiles < 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 10px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .stat-card {
+        min-width: 100px;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .stat-number {
+        font-size: 1.2rem;
+    }
+
+    .form-section,
+    .tickets-section {
+        padding: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .submit-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .ticket {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+
+    .ticket-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .ticket-title {
+        font-size: 0.95rem;
+    }
+
+    .ticket-date {
+        font-size: 0.65rem;
+    }
 }
