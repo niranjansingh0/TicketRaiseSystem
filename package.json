@@ -1,0 +1,11 @@
+{
+  "name": "ticketraisesystem-serverless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./api/server.js"
+  },
+  "dependencies": {
+    "mongoose": "^8.18.1"
+  }
+}
